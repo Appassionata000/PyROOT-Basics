@@ -45,7 +45,7 @@ photonPt_Cuts3.Draw("SAME")
 
 ## Fitting
 
-The `TH1::Fit()` method:
+The `TH1::Fit()` method in C++:
 
 ```cpp
 // Fit a TF1 function with the TH1::Fit() method
