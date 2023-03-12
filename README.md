@@ -170,20 +170,25 @@ dscb.SetParLimits(3, 0.1, 2)  # a1
 dscb.SetParLimits(4, 1, 30)   # n1
 dscb.SetParLimits(5, 0.1, 2)  # a2
 dscb.SetParLimits(6, 1, 40)   # n2
+
 # Normalize the data (optional)
 norm = invMass.Integral()
 invMass_0.Scale(1 / norm)
 invMass_dscb.Scale(1 / norm)
+
 # Perform the fit and get the fitted results
 fit_result = invMass_dscb.Fit("dscb", "M, R, S, Q")
 fitted_dscb = invMass_dscb.GetFunction("dscb")  # Fitted function
+
 # Store fitted results
 dscb_fit_pars = fitted_dscb.GetParameters()
 dscb_fit_par_errors = fitted_dscb.GetParErrors()
 chisquared = fit_result.MinFcnValue()
 ndf = fit_result.Ndf()
+
 # Get integral of the fitted function
 int_func_sig = fitted_dscb.Integral(120e3, 130e3)
+
 # Plotting 
 invMass_0.Draw("E") # Draw with errorbars
 fitted_dscb.Draw("SAME")
