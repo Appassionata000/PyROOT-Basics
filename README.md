@@ -127,7 +127,7 @@ def quartic_bkg(x, p):
 ```python
 import math
 def double_sided_crystal_ball(x, p):
-	# Double sided crystal ball function can be used to fit the signal accurately
+    # Double sided crystal ball function can be used to fit the signal accurately
     # p[0]: constant, p[1]: mean, p[2]: std,   p[3]: a1(low),  p[4]: n1(low),  p[5]: a2(high)  p[6]: n2(high)
     s = (x[0] - p[1]) / p[2]
     a1, n1, a2, n2 = p[3], p[4], p[5], p[6]
@@ -164,7 +164,8 @@ invMass_dscb = invMass.Clone("DSCB fit")
 dscb = r.TF1("dscb", double_sided_crystal_ball, 105e3, 140e3, 7)
 # Essential! Setting initial parameters
 dscb.SetParameters(1, 125e3, 2e3, 1, 10, 1, 20) 
-# Setting boundaries for parameters also has an influence on ROOT fitting performance, especially for complicated functions like DSCB
+# Setting boundaries for parameters also has an influence on ROOT fitting performance, 
+# especially for functions with many parameters
 dscb.SetParLimits(0, 0, 100)
 dscb.SetParLimits(3, 0.1, 2)  # a1
 dscb.SetParLimits(4, 1, 30)   # n1
