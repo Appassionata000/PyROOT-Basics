@@ -1,5 +1,3 @@
-[TOC]
-
 # PyROOT Basics
 
 This tutorial is based on the six-week undergraduate Third Year lab work performed by at the University of Manchester.The tutorial focuses on data fitting and plot configuration and is a summary of codes useful during the lab. The root files that pass the selection cuts are obtained using codes written by senior students. The repository owner does not have permission to upload these files. The original data are from [ATLAS Open Data 13 TeV](http://opendata.atlas.cern/release/2020/documentation/index.html). 
