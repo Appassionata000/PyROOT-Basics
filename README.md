@@ -182,25 +182,32 @@ ndf = fit_result.Ndf()
 # Get integral of the fitted function
 int_func_sig = fitted_dscb.Integral(120e3, 130e3)
 # Plotting 
-invMass_0.Draw()
+invMass_0.Draw("E") # Draw with errorbars
 fitted_dscb.Draw("SAME")
 canvas.Draw()
 ```
 
 ## Configuring plots
 
+- Plotstyle-related classes: [TAttMarker](https://root.cern.ch/doc/master/classTAttMarker.html), [TattLine](https://root.cern.ch/doc/master/classTAttLine.html) [TAttAxis](https://root.cern.ch/doc/master/classTAttAxis.html)
+
 ```python
 # Global setting
-# Canvas
+# Canvas size
 r.gStyle.SetCanvasDefH(height) # default 500
 r.gStyle.SetCanvasDefW(width) # default 700
-
+```
+```python
 # Pad
 r.gPad.SetMargin(0.1, 0.2, 0.2, 0.1)  # left, right, bottom, top
 r.gPad.SetFrameLineWidth(3) # Frame line width
 r.gPad.SetLogy(1) # logrithm y-axis
-
-# TH1F/TF1/... setting
+```
+```python
+# TH1F/TF1/... objects setting
+invMass.SetTitle("Invariant Mass for the diphoton system")
+```
+```python
 # Axis label
 invMass.SetLabelSize(0.07, "X") # Relative size
 invMass.SetLabelSize(0.07, "Y")
@@ -212,8 +219,64 @@ invMass.GetXaxis().SetTitleSize(0.06)
 invMass.GetYaxis().SetTitleSize(0.06)
 invMass.SetTitleOffset(1, "X") # Modify positions
 invMass.SetTitleOffset(1, "Y")
-
 ```
+```python
+# Marker
+invMass.SetMarkerStyle(8)
+```
+```python
+# Line
+fitted_bkg.SetLineStyle(2)
+fitted_bkg.SetLineColorAlpha(4, 0.9)
+fitted_bkg.SetLineWidth(3)
+```
+```python
+# Axis range
+invMass.GetYaxis().SetRangeUser(0, 8000)
+```
+```python
+# Set statistics box
+r.gStyle.SetOptStat(1111)
+```
+
+```python
+# Set statistics box position
+var.Draw() # Set statistics box position after Draw()
+r.gPad.Update()
+pave = var.FindObject("stats")
+pave.SetTextSize(0.055)
+pave.SetX1NDC(0.8)
+pave.SetY1NDC(0.2)
+pave.SetX2NDC(0.95)
+pave.SetY2NDC(0.9)
+```
+
+```python
+# Create a TLegend object
+legend = r.TLegend(0.55, 0.55,				# relative coordinate (x1, y1) (left down corner)
+                   0.85, 0.85)          # relative coordinate (x2, y2) (right up corner)
+legend.AddEntry(ATLAS_DATA, " Data")
+legend.AddEntry(MC_DATA, " Signal")
+legend.AddEntry(BackgroundFit, " Background fit")
+legend.AddEntry(InclusiveFit, " Signal + Background fit")
+legend.SetBorderSize(0)
+r.gStyle.SetLegendTextSize(0.04)
+legend.Draw("SAME")
+```
+
+```python
+# Create a TLatex object
+infolatex1 = r.TLatex()
+infolatex1.SetTextSize(0.036)	# Relative font size 
+infolatex1.DrawLatexNDC(0.15, 0.36,  "\sqrt{s} = 13 TeV, \int Ldt=10.064 fb^{-1}") # Relative position
+infolatex1.Draw("SAME")
+```
+
+
+
+
+
+
 
 
 
