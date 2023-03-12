@@ -1,6 +1,6 @@
 # PyROOT Basics
 
-This tutorial is based on the third year lab work performed by at the University of Manchester. The tutorial focuses on data fitting and plot configuration and is a summary of codes useful during the lab.
+This is a summary of useful codes during the third year lab work performed at the University of Manchester.
 
 **Installing ROOT on MacOS**
 
