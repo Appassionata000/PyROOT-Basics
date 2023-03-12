@@ -90,7 +90,7 @@ One-dimensional functions in ROOT are typically defined as `TF1` objects
 
 ```cpp
 // A common constructor and examples of initializing TF1 objects (C++)
-TF1::TF1(const char *name, const char *formula, Double_t xmin = 0, Double_t xmax = 1, Option_t *option)	
+TF1::TF1(const char *name, const char *formula, Double_t xmin = 0, Double_t xmax = 1, Option_t *option);
 auto func1 = new TF1("func1", "sin(x)/x", 0, 10);
 auto func2 = new TF1("func2", "TMath::BesselJ0(x)", 0, 10);
 auto quartic = new TF1("quartic", "[0]*x**4 + [1]*x**3 + [2]*x**2 + [3]*x + [4]", 0, 10);
