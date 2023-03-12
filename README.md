@@ -183,6 +183,7 @@ int_func_sig = fitted_dscb.Integral(120e3, 130e3)
 invMass_0.Draw("E") # Draw with errorbars
 fitted_dscb.Draw("SAME")
 canvas.Draw()
+canvas.SaveAs("fit.pdf")
 ```
 
 ## Configuring plots
@@ -191,6 +192,8 @@ canvas.Draw()
 
 ```python
 # Global setting
+r.gStyle.SetErrorX(0)
+r.gStyle.SetOptStat(0) # don't display statistics box
 # Canvas size
 r.gStyle.SetCanvasDefH(height) # default 500
 r.gStyle.SetCanvasDefW(width) # default 700
@@ -269,6 +272,39 @@ infolatex1.SetTextSize(0.036)	# Relative font size
 infolatex1.DrawLatexNDC(0.15, 0.36,  "\sqrt{s} = 13 TeV, \int Ldt=10.064 fb^{-1}") # Relative position
 infolatex1.Draw("SAME")
 ```
+
+## Miscellaneous
+
+```python
+# Get list of errors
+original_errors = []
+for i in range(invMass.GetNbinsX()):
+    original_errors = original_errors + [invMass.GetBinError(i + 1)]
+```
+
+```python
+# Subtract the data from the background fitting
+for i in range(invMass.GetNbinsX()):
+    invMass_sub.AddBinContent(i+1, -1 * (fitted_bkg(invMass_sub.GetBinCenter(i+1))))
+    #invMass_sub.SetBinError(i+1, original_errors[i]) # reset errors
+```
+
+```python
+# TF1 integral
+bin_width = 2e3
+N_fit_sig = fitted_gaus.Integral(120e3, 130e3) / bin_width
+N_fit_sig_err = fitted_gaus.IntegralError(120e3, 130e3) / bin_width
+```
+
+```python
+# TH1F integral
+import ctypes
+N_selec = invMass.Integral(11, 15) # bin number
+N_selec_err = c_double()
+invMass.IntegralAndError(11, 15, N_selec_err)
+```
+
+
 
 
 
