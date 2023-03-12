@@ -20,7 +20,7 @@ import ROOT as r
 ## Reading files and plotting histograms
 
 ```python
-# create a canvas. Similar to `fig` in matplotlib, where you can add different axes.
+# create a canvas.
 canvas1 = r.TCanvas("histograms_1")		
 f_photonPt_Cuts1 = r.TFile.Open("out/ATLAS_yy_Cuts1.root", "READ") # hfile1 is a TFile object
 f_photonPt_Cuts2 = r.TFile.Open("out/ATLAS_yy_Cuts2.root", "READ")
