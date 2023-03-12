@@ -1,6 +1,6 @@
-[TOC]
+# PyROOT Basics
 
-# PyROOT Plotting Basics
+This tutorial is based on the six-week undergraduate Third Year lab work performed by at the University of Manchester.The tutorial focuses on data fitting and plot configuration and is a summary of codes useful during the lab. The root files that pass the selection cuts are obtained using codes written by senior students. The repository owner does not have permission to upload these files. The original data are from [ATLAS Open Data 13 TeV][http://opendata.atlas.cern/release/2020/documentation/index.html]. 
 
 Installing ROOT on MacOS
 
@@ -26,7 +26,7 @@ f_photonPt_Cuts1 = r.TFile.Open("out/ATLAS_yy_Cuts1.root", "READ") # hfile1 is a
 f_photonPt_Cuts2 = r.TFile.Open("out/ATLAS_yy_Cuts2.root", "READ")
 f_photonPt_Cuts3 = r.TFile.Open("out/ATLAS_yy_Cuts3.root", "READ")
 # Can use print(f_photonPt_cuts1.ls()) to list the keys in the file
-# Get histogram data using their keys (hist_id)
+# Get histogram data using their keys
 photonPt_Cuts1 = f_photonPt_Cuts1.Get("photon_pt[0]")	# photonPt_1 is a TH1F object
 photonPt_Cuts2 = f_photonPt_Cuts2.Get("photon_pt[0]")
 photonPt_Cuts3 = f_photonPt_Cuts3.Get("photon_pt[0]")
@@ -65,7 +65,7 @@ quartic = r.TF1("quartic", "[0]*x**4 + [1]*x**3 + [2]*x**2 + [3]*x + [4]")
 
 - Pre-defined functions can be found in the `TFormula` class.
 
-### Define more complicated functions
+### Define more complicated functions 
 
 ```python
 # The function always takes two parameters no matter how many fitting parameters there are
