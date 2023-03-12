@@ -99,7 +99,8 @@ auto quartic = new TF1("quartic", "[0]*x**4 + [1]*x**3 + [2]*x**2 + [3]*x + [4]"
 ```python
 # Corresponding TF1 objects in Python
 func1 = r.TF1("func1", "sin(x)/x", 0, 10)
-# The 2nd parameter of the TF1 constructor is a text string parsed as a TFormla. It should obey C++ syntax instead of using TMath.BesselJ0(x)
+# The 2nd parameter of the TF1 constructor is a text string parsed as a TFormla. 
+# It should obey C++ syntax instead of using TMath.BesselJ0(x)
 func2 = r.TF1("func2", "TMath::BesselJ0(x)", 0, 10)
 quartic = r.TF1("quartic", "[0]*x**4 + [1]*x**3 + [2]*x**2 + [3]*x + [4]")
 ```
