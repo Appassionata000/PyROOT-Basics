@@ -190,8 +190,9 @@ canvas.SaveAs("fit.pdf")
 
 - Plotstyle-related classes: [TAttMarker](https://root.cern.ch/doc/master/classTAttMarker.html), [TattLine](https://root.cern.ch/doc/master/classTAttLine.html), [TAttAxis](https://root.cern.ch/doc/master/classTAttAxis.html)
 
+### Global settings
+
 ```python
-# Global setting
 r.gStyle.SetErrorX(0)
 r.gStyle.SetOptStat(0) # don't display statistics box
 # Canvas size
@@ -204,8 +205,9 @@ r.gPad.SetMargin(0.1, 0.2, 0.2, 0.1)  # left, right, bottom, top
 r.gPad.SetFrameLineWidth(3) # Frame line width
 r.gPad.SetLogy(1) # logrithm y-axis
 ```
+### `TH1F`/`TF1`/... objects setting
+
 ```python
-# TH1F/TF1/... objects setting
 invMass.SetTitle("Invariant Mass for the diphoton system")
 ```
 ```python
