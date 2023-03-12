@@ -192,25 +192,25 @@ canvas.Draw()
 ```python
 # Global setting
 # Canvas
-r.gStyle.SetCanvasDefH(height)  # default 500
-r.gStyle.SetCanvasDefW(width)   # default 700
+r.gStyle.SetCanvasDefH(height) # default 500
+r.gStyle.SetCanvasDefW(width) # default 700
 
 # Pad
 r.gPad.SetMargin(0.1, 0.2, 0.2, 0.1)  # left, right, bottom, top
-r.gPad.SetFrameLineWidth(3)  # Frame line width
-r.gPad.SetLogy(1)			 # logrithm y-axis
+r.gPad.SetFrameLineWidth(3) # Frame line width
+r.gPad.SetLogy(1) # logrithm y-axis
 
 # TH1F/TF1/... setting
 # Axis label
-invMass.SetLabelSize(0.07, "X")    	  # Relative size
+invMass.SetLabelSize(0.07, "X") # Relative size
 invMass.SetLabelSize(0.07, "Y")
-invMass.GetXaxis().SetNdivisions(10)  # Set the division of X axis
+invMass.GetXaxis().SetNdivisions(10) # Set the division of X axis
 invMass.GetYaxis().SetNdivisions(10)
 invMass.GetXaxis().SetTitle("Invariant Mass") # Set label titles
 invMass.GetYaxis().SetTitle("Entries")
 invMass.GetXaxis().SetTitleSize(0.06)
 invMass.GetYaxis().SetTitleSize(0.06)
-invMass.SetTitleOffset(1, "X")	# Modify positions
+invMass.SetTitleOffset(1, "X") # Modify positions
 invMass.SetTitleOffset(1, "Y")
 
 ```
