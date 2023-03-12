@@ -159,6 +159,7 @@ Standard process of fitting `TH1` object data with a user defined function in Py
 invMass_0 = invMass.Clone("Original data")
 invMass_dscb = invMass.Clone("DSCB fit")
 # invMass_gaus = invMass.Clone("gaus fit")
+
 # Define the fitting function TF1 object and specify the fitting range as well as the parameters
 dscb = r.TF1("dscb", double_sided_crystal_ball, 105e3, 140e3, 7)
 # Essential! Setting initial parameters
