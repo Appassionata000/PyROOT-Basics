@@ -253,8 +253,8 @@ pave.SetY2NDC(0.9)
 
 ```python
 # Create a TLegend object
-legend = r.TLegend(0.55, 0.55,				# relative coordinate (x1, y1) (left down corner)
-                   0.85, 0.85)          # relative coordinate (x2, y2) (right up corner)
+legend = r.TLegend(0.55, 0.55,	# relative coordinate (x1, y1) (left down corner)
+                   0.85, 0.85)  # relative coordinate (x2, y2) (right up corner)
 legend.AddEntry(ATLAS_DATA, " Data")
 legend.AddEntry(MC_DATA, " Signal")
 legend.AddEntry(BackgroundFit, " Background fit")
