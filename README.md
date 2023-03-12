@@ -49,8 +49,8 @@ The `TH1::Fit()` method:
 
 ```cpp
 // Fit a TF1 function with the TH1::Fit() method
-TFitResultPtr Fit(TF1 *f1, const char *option="",    // commonly used options are listed below
-                           const char *goption="",	 // the same options as TF1::Draw()
+TFitResultPtr Fit(TF1 *f1, const char *option="",   // commonly used options are listed below
+                           const char *goption="",  // the same options as TF1::Draw()
                            double xxmin=0.0, double xxmax=0.0); // Specify the range over which to apply the fit
 // Fit a pre-defined function with the TH1::Fit() method
 TFitResultPtr Fit(const char *fname, const char *option="", const char *goption="", 
