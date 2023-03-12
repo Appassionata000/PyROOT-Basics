@@ -188,7 +188,7 @@ canvas.SaveAs("fit.pdf")
 
 ## Configuring plots
 
-- Plotstyle-related classes: [TAttMarker](https://root.cern.ch/doc/master/classTAttMarker.html), [TattLine](https://root.cern.ch/doc/master/classTAttLine.html) [TAttAxis](https://root.cern.ch/doc/master/classTAttAxis.html)
+- Plotstyle-related classes: [TAttMarker](https://root.cern.ch/doc/master/classTAttMarker.html), [TattLine](https://root.cern.ch/doc/master/classTAttLine.html), [TAttAxis](https://root.cern.ch/doc/master/classTAttAxis.html)
 
 ```python
 # Global setting
