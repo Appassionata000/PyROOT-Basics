@@ -153,7 +153,9 @@ Standard process of fitting `TH1` object data with a user defined function in Py
 
 ```python
 # Example of fitting the MC signal using the double sided crystal ball function
-# If the user wants to fit multiple functions to a set of data, it's a good idea to copy the original TH1 object first. To begin, if more fits are to be performed later, the first fitted result will be deleted by default. Second, when plotting, the fitting result will always be on top of the TH1 data.
+# If the user wants to fit multiple functions to a set of data, it's a good idea to copy the original TH1 object first. 
+# To begin, if more fits are to be performed later, the first fitted result will be deleted by default. 
+# Second, when plotting, the fitting result will always be on top of the TH1 data.
 invMass_0 = invMass.Clone("Original data")
 invMass_dscb = invMass.Clone("DSCB fit")
 # Define the fitting function TF1 object and specify the fitting range as well as the parameters
